@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.site-init{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: auto;
+    background-color: red;
+    color: black;   
+}
+
+.site-init{
+    font-weight: 300;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    margin-right: 2rem;
+
+}
+ main{
+     color: black;
+     flex-direction: none;
+     justify-content: center;
+     align-items: center;
+     height: 70vh;
+ }
+
+ main .login-container{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+ }

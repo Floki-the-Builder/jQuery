@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- link -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>My user registration</h1>
+        <nav>
+            <a href="index.html"></a>
+            <a href="register.html"></a>
+
+        </nav>
+    </header>
+
+    <main>
+<!-- form with the next fields: emails, password, first name, last name, name, age, address, phone num, payment, color -->
+    <div class="form-container">
+        <h2>Register New user</h2>
+        <input type="email" id="txtEmail" placeholder="Email">
+        <input type="txtPw" id="txtPw" placeholder="Enter your password">
+        <input type="txtFmame" id="txtFname" placeholder="Enter your name">
+        <input type="txtLname" id="txtLname" placeholder="Enter your last name">
+        <input type="number" id="age" placeholder="age">
+        <button class="btnReginster" onclick="register()"> register</button>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts/app.js"></script>
+    </main>
+</body>
+</html>
