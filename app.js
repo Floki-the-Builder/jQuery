@@ -1,31 +1,62 @@
 // obj constructor
-function user(email, pWord, fName, lName,age){
+function user(email, pWord, fName, lName){
    this.email = email;
-   this.password = password;
-   this.fName = firstName;
-   this.lName = lName;
-   this.age = age;
+   this.passWord = pWord;
+   this.firstName = fName;
+   this.lastName = lName;
+}
+
+function isValid(user){
+    // return false when user is not valid
+    // return true when user is valid
+     let valid = true;
+     if(user.email.length == 0){
+         valid = false;
+         console.log("add an email");
+         $('#txtEmail').addClass('input-error')
+     } if(user.passWord.length == 0){
+        valid = false;
+        console.log("add a password");
+        $('#txtEmail').addClass('input-error')
+     } if(user.firstName.length == 0){
+        valid = false;
+        console.log("add first name");
+        $('#txtEmail').addClass('input-error')
+     }if(user.lastName.length == 0){
+        valid = false;
+        console.log("add a last name");
+        $('#txtEmail').addClass('input-error')
+     }
+     return valid;
+
 }
 
 // register func
-
 function register(){
     let userEmail = $('#txtEmail').val();
     let userPass = $('#txtPw').val();
     let userFname = $('#txtFname').val();
     let userLname = $('#txtLname').val();
-    let userAge = $('#age').val();
 
-    let newUser = new user(userEmail, userPass,userFname, userLname, userAge)
-// xlear th inputs
-$('input').val("");
-console.log(newUser);
+    let newUser = new user(userEmail, userPass,userFname, userLname)
+        if(isValid(newUser)== true){
+        console.log(newUser);
+        // clear the inputs
+        $('input').val(""); 
+        }
+
+
 }
 
 
 
 function init(){
     console.log("register")
+    //hook events
+    $("#btnRegister").click(register);
+    $("#txtLname").keypress(function(e){
+        console.log(e)
+    });
 }
 
 window.onload=init;
