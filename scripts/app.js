@@ -1,5 +1,5 @@
 // obj constructor
-function user(email, pWord, fName, lName){
+function User(email, pWord, fName, lName){
    this.email = email;
    this.passWord = pWord;
    this.firstName = fName;
@@ -38,17 +38,14 @@ function register(){
     let userFname = $('#txtFname').val();
     let userLname = $('#txtLname').val();
 
-    let newUser = new user(userEmail, userPass,userFname, userLname)
+    let newUser = new User(userEmail, userPass,userFname, userLname)
         if(isValid(newUser)== true){
-        console.log(newUser);
-        // clear the inputs
+        saveUser(newUser);      
         $('input').val(""); 
         }
 
 
 }
-
-
 
 function init(){
     console.log("register")
