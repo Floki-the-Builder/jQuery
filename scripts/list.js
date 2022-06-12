@@ -12,6 +12,7 @@ function displayUser(usersArray){
                 <td>${user.firstName}</td>
                 <td>${user.lastName}</td>
                 <td>${user.email}</td>
+                <td>${user.color}</td>
           </tr>
     `;
          // append the row to the table

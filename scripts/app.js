@@ -1,9 +1,11 @@
 // obj constructor
-function User(email, pWord, fName, lName){
+function User(email, pWord, fName, lName,age, color){
    this.email = email;
    this.passWord = pWord;
    this.firstName = fName;
    this.lastName = lName;
+   this.age = age;
+   this.color = color;
 }
 
 function isValid(user){
@@ -17,18 +19,46 @@ function isValid(user){
      } if(user.passWord.length == 0){
         valid = false;
         console.log("add a password");
-        $('#txtEmail').addClass('input-error')
+        $('#txtPw').addClass('input-error')
      } if(user.firstName.length == 0){
         valid = false;
         console.log("add first name");
-        $('#txtEmail').addClass('input-error')
-     }if(user.lastName.length == 0){
+        $('#txtFname').addClass('input-error')
+     } if(user.lastName.length == 0){
         valid = false;
         console.log("add a last name");
-        $('#txtEmail').addClass('input-error')
+        $('#txtLname').addClass('input-error')
      }
+    //    if(user.age.length == 0){
+    //     valid = false;
+    //     console.log("add age");
+    //     $('#age').addClass('input-error')
+    //  } 
+    
      return valid;
 
+}
+
+function validatePass(){
+    console.log('validating pass');
+    // get value imput
+    let txtPass = $('#txtPw');
+    let password = txtPass.val();
+    // is password < 6 chars
+    if(password.length < 6){ // is password < 6
+        txtPass.css('background', '#ff9898') // jQuery cjanges css
+        displayError('The password is too short')
+    } else{
+        txtPass.css('background', '#6Acc66') // jQuery cjanges css
+        hideError();
+    }
+}
+
+function displayError(msg){
+    $("#alertError").removeClass('hide').text()
+}
+function hideError(){
+    $('#alertError').addClass("hide");
 }
 
 // register func
@@ -37,11 +67,15 @@ function register(){
     let userPass = $('#txtPw').val();
     let userFname = $('#txtFname').val();
     let userLname = $('#txtLname').val();
+    let userColor = $('#selColor').val();
 
-    let newUser = new User(userEmail, userPass,userFname, userLname)
+    let newUser = new User(userEmail, userPass,userFname, userLname, userColor)
         if(isValid(newUser)== true){
         saveUser(newUser);      
+        hideError();
         $('input').val(""); 
+        }else{
+            displayError("Please, compete all fields")
         }
 
 
@@ -52,8 +86,11 @@ function init(){
     //hook events
     $("#btnRegister").click(register);
     $("#txtLname").keypress(function(e){
-        console.log(e)
+        if(e.key == 'Enter'){ /// registers with enter 
+            register();
+        }
     });
+    $("#txtPw").keyup(validatePass) // executes when the key is up
 }
 
 window.onload=init;

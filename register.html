@@ -21,14 +21,20 @@
     </header>
 
     <main>
+       
 <!-- form with the next fields: emails, password, first name, last name, name, age, address, phone num, payment, color -->
-    <div class="form-container">
-        <h2>Register New user</h2>
+    <div class="register-container">
+        <legend class = "register-legend">Register</legend>
+        <p class="alert-error hide" id="alertError">
+            Here are the errors!
+        </p>
         <input type="email" id="txtEmail" placeholder="Email">
         <input type="password" id="txtPw" placeholder="Enter your password">
         <input type="txtFmame" id="txtFname" placeholder="Enter your name">
         <input type="txtLname" id="txtLname" placeholder="Enter your last name">
         <input type="number" id="age" placeholder="age">
+        <input type="color" id="color" placeholder="color">
+
         <button id="btnRegister" > register</button>
     </div>
 

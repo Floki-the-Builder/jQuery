@@ -8,5 +8,26 @@
 </head>
 <body>
     
+
+    <main>
+        <div class="register-container">
+            <legend class = "register-legend">Login</legend>
+            <p class="alert-error hide" id="alertError">
+                Invalid credentials
+            </p>
+            <input type="username" id="txtEmail" placeholder="Enter username">
+            <input type="password" id="txtPw" placeholder="Enter password">
+            <button id="btnLogin">Login</button>
+            <!-- takes you to register if not a user -->
+            <a href="/register.html">Not a user?</a>
+        </div>
+    </main>
+
+    <!-- scripts -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts/storeManager.js"></script>
+    <script src="scripts/login.js"></script>
 </body>
 </html>
